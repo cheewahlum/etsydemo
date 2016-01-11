@@ -1,0 +1,13 @@
+class AddAttachmentListingImageToUsers < ActiveRecord::Migration
+  def self.up
+    change_table :users do |t|
+      t.attachment :listing
+      t.attachment :image
+    end
+  end
+
+  def self.down
+    remove_attachment :users, :listing
+    remove_attachment :users, :image
+  end
+end
